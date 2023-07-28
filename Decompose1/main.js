@@ -24,9 +24,9 @@ const main = async () => {
     const bill = domain.calculateTotal(purchase);
     console.log(bill);
     domain.validateExpenses(bill.expenses);
-    const rate = await exchange.getRate('UAH');
-    const uah = bill.total * rate;
-    console.log(uah);
+    const rate = await exchange.getRate('RUB');
+    const rub = bill.total * rate;
+    console.log(rub);
   } catch (err) {
     console.error(err);
   }

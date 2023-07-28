@@ -6,9 +6,7 @@ const purchase = {
     { name: 'Keyboard', price: 100 },
     { name: 'HDMI cable', price: 10 },
   ],
-  Textile: [
-    { name: 'Bag', price: 50 },
-  ],
+  Textile: [{ name: 'Bag', price: 50 }],
 };
 
 // Get array element by index
@@ -34,10 +32,7 @@ console.log(purchase.Electronics.at(-4));
 
 // Union
 
-console.log([
-  ...purchase.Electronics,
-  ...purchase.Textile,
-]);
+console.log([...purchase.Electronics, ...purchase.Textile]);
 
 // Add mouse
 
@@ -66,5 +61,5 @@ if (prices.includes(100)) console.log('100 is there');
 }
 // Filter elements
 
-const filtered = purchase.Electronics.filter((item) => item.price > 50);
+const filtered = purchase.Electronics.filter(({ price }) => price > 50);
 console.log({ filtered });
