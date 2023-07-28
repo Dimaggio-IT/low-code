@@ -31,10 +31,10 @@ const validateExpenses = (items) => {
 
 const purchase = {
   Electronics: [
-    { name: 'Laptop',  price: 1500 },
-    { name: 'Mouse',  price: 25 },
-    { name: 'Keyboard',  price: 100 },
-    { name: 'HDMI cable',  price: 10 },
+    { name: 'Laptop', price: 1500 },
+    { name: 'Mouse', price: 25 },
+    { name: 'Keyboard', price: 100 },
+    { name: 'HDMI cable', price: 10 },
   ],
   Textile: [
     { name: 'Bag', price: 50 },
@@ -53,6 +53,7 @@ const getRate = async (currency) => {
   const url = `https://${host}/${path}${key}`;
   const res = await fetch(url);
   const data = await res.json();
+  // console.log(data.rates);
   const rate = data.rates[currency];
   return rate;
 };
@@ -63,9 +64,9 @@ const main = async () => {
     const bill = calculateTotal(purchase);
     console.log(bill);
     validateExpenses(bill.expenses);
-    const rate = await getRate('UAH');
-    const uah = bill.total * rate;
-    console.log(uah);
+    const rate = await getRate('RUB');
+    const rub = bill.total * rate;
+    console.log('\n', rub);
   } catch (err) {
     console.error(err);
   }
