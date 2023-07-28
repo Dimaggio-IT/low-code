@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 
 const MAX_PURCHASE = 2000;
 
